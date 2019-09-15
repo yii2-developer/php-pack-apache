@@ -14,6 +14,7 @@ RUN apt-get update \
     && docker-php-ext-enable intl
 
 RUN apt-get update \
+    && apt-get install -y --no-install-recommends default-mysql-client \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-enable pdo_mysql
 
