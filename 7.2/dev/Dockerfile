@@ -18,7 +18,7 @@ RUN apt-get update \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-enable pdo_mysql
 
-RUN pecl install https://xdebug.org/files/xdebug-2.6.1.tgz \
+RUN pecl install https://xdebug.org/files/xdebug-2.9.8.tgz \
     && docker-php-ext-enable xdebug
 
 RUN rm -rf /var/lib/apt/lists/*
