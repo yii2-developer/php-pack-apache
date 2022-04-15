@@ -23,4 +23,5 @@ RUN pecl install https://xdebug.org/files/xdebug-2.9.8.tgz \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY usr/local/bin/composer.phar /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
