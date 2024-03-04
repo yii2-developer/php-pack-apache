@@ -8,13 +8,13 @@ RUN mkdir /opt/tmp && cd /opt/tmp \
     && rm -rf /opt/tmp
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends libicu67 libicu-dev \
+    && apt-get install --yes --no-install-recommends libicu67 libicu-dev \
     && docker-php-ext-configure intl --with-icu-dir=/opt/icu691 \
     && docker-php-ext-install intl \
     && docker-php-ext-enable intl
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends default-mysql-client \
+    && apt-get install --yes --no-install-recommends default-mysql-client \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-enable pdo_mysql
 
